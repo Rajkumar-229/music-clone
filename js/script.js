@@ -24,9 +24,8 @@ function formatSeconds(seconds) {
 }
 
 
-
+// Display all the folders
 async function getSongs(folder) {
-
   currFolder = folder;
   let a = await fetch(`http://127.0.0.1:3000/${folder}/`)
   let response = await a.text();
@@ -42,6 +41,7 @@ async function getSongs(folder) {
   }
 
 
+  // For show songs list
   let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0]
   songUL.innerHTML = ""
 
@@ -68,7 +68,7 @@ async function getSongs(folder) {
 }
 
 
-
+// Play and stop the song button
 const playMusic = (track, pause = false) => {
   currentSong.src = `/${currFolder}/` + track;
   // let audio = new Audio("/songs/" + track);
@@ -81,6 +81,7 @@ const playMusic = (track, pause = false) => {
 }
 
 
+// For display all the albums
 async function displayAlbum() {
   let a = await fetch(`/songs/`)
   let response = await a.text();
@@ -129,13 +130,11 @@ async function displayAlbum() {
   });
 }
 
+// Change the images of song play and stop
 async function main() {
   await getSongs("songs/Arijit-Singh")
   playMusic(songs[0], true);
-
-
   await displayAlbum();
-
   play.addEventListener("click", () => {
     if (currentSong.paused) {
       currentSong.play();
@@ -149,12 +148,11 @@ async function main() {
 
 
 
-
+// For SongSeek bar
   currentSong.addEventListener("timeupdate", () => {
     document.querySelector(".time").innerHTML = `${formatSeconds(currentSong.currentTime)}/${formatSeconds(currentSong.duration)}`
     document.querySelector(".c-seek").style.left = (currentSong.currentTime / currentSong.duration) * 100 + "%";
   })
-
 
   document.querySelector(".seekbar").addEventListener("click", e => {
     let parcent = (e.offsetX / e.target.getBoundingClientRect().width) * 100
@@ -167,6 +165,7 @@ async function main() {
   document.querySelector(".cross").addEventListener("click", () => {
     document.querySelector(".left").style.left = "-110%"
   })
+
 
   // Add an event listner to make a previous button
   previous.addEventListener("click", () => {
@@ -190,6 +189,7 @@ async function main() {
 
 
 
+  // For volume button seek bar
   document.querySelector(".rang").getElementsByTagName("input")[0].addEventListener("change", (e) => {
     currentSong.volume = parseInt(e.target.value) / 100;
 
