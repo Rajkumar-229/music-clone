@@ -1,0 +1,286 @@
+:root {
+    --a: 0;
+}
+
+.flex {
+    transition: all 0.5s;
+    display: flex;
+    font-weight: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
+
+.invert {
+    filter: invert(1);
+}
+
+.play-button {
+    background-color: #1fdf64;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    left: 67%;
+    bottom: 56px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    opacity: var(--a);
+    transition: all 0.5s;
+    bottom: 56px;
+
+}
+
+.card:hover {
+    --a: 1;
+    transition: all 1s;
+
+}
+
+
+.play-icon svg {
+    width: 24px;
+    /* Adjust icon size */
+    height: 24px;
+    /* Adjust icon size */
+    fill: black;
+    /* Black play icon */
+}
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 7px;
+    /* Width of the scrollbar */
+    background-color: #2c2c2c;
+    /* Dark background color for the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4a4a4a;
+    /* Color of the scrollbar thumb */
+    border-radius: 9px;
+    /* Rounded corners for the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #6e6e6e;
+    /* Color of the scrollbar thumb when hovered */
+}
+
+/* For Firefox */
+.scrollbar-dark {
+    scrollbar-width: thin;
+    /* Thin scrollbar */
+    scrollbar-color: #4a4a4a #2c2c2c;
+    /* thumb color and track color */
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 1490px) {
+    .left {
+        width: 40%;
+        left: -100%;
+        position: absolute;
+        z-index: 1;
+        transition: all 0.5s;
+    }
+
+    .container1 {
+        transition: all 0.5s;
+    }
+
+    .playbar {
+        width: 98%;
+    }
+
+    .time {
+        width: 105px;
+        margin: 0px 32px;
+    }
+
+    .right {
+        width: 100%;
+        transition: all 0.5s;
+    }
+
+    .hamberger {
+        display: block;
+    }
+
+    header {
+        padding: 0;
+    }
+
+    .nav {
+        padding: 13px;
+        gap: 14px;
+    }
+
+    .cross {
+        display: block;
+    }
+}
+
+@media (max-width: 860px) {
+    .abovebar {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .right {
+        margin: 0;
+    }
+
+    .sign-btn {
+        font-size: 14px;
+        padding-right: 12px;
+    }
+
+    .button>:nth-child(2) {
+        margin-right: 2px;
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    .button>:nth-child(2):hover {
+        font-size: 13px;
+    }
+
+    .button {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        height: 52px;
+    }
+
+    .t-v {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1px;
+        gap: 11px;
+    }
+
+    .info>div {
+        font-size: 8px;
+        word-break: break-all;
+    }
+
+    .play-icon {
+        padding: 5px;
+    }
+
+    .songname {
+        width: auto;
+        height: 22px;
+    }
+
+    .time {
+        height: 20px;
+        padding-left: 14px;
+    }
+
+    .left {
+        width: 70%;
+        padding: 2px;
+    }
+
+    .playbar {
+        height: 156px;
+        width: 98%;
+    }
+
+    .container1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        width: 180px;
+        height: 265px;
+    }
+
+    .circle {
+        margin: 5px;
+        width: 170px;
+        height: 185px;
+        border-radius: 22px;
+    }
+
+    .container1 {
+        padding: 3px;
+    }
+
+    .playbuttons {
+        width: 146px;
+        height: 41px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .play h6 {
+        display: none;
+    }
+
+    .left,
+    .right {
+        transition: all 0.5s;
+
+    }
+
+    .home {
+        border-radius: 9px;
+        padding-right: 5px;
+        padding-bottom: 4px;
+    }
+
+    .info img,
+    .hey>div {
+        display: flex;
+        word-break: break-all;
+    }
+
+    
+}
+
+@media (max-width: 400px) {
+
+    .circle {
+        height: 164px;
+        width: 294px;
+        transition: all 0.5s;
+    }
+
+    .circle>img {
+        overflow: hidden;
+        height: 253px;
+        transition: all 0.5s;
+    }
+
+    .card {
+
+        width: 40vh;
+        height: 35vh;
+    }
+}
+
