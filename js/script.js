@@ -1,4 +1,4 @@
-console.log('Hey this is a js program');
+console.log('Hey this is a js program   ');
 
 let currentSong = new Audio();
 let songs;
@@ -8,6 +8,8 @@ function formatSeconds(seconds) {
   if (isNaN(seconds) || seconds < 0) {
     return "00:00";
   }
+
+  
   // Round the seconds to the nearest whole number
   seconds = Math.round(seconds);
 
